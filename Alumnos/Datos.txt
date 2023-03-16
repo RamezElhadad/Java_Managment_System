@@ -1,0 +1,42 @@
+Ramez
+Nombre: Ramez
+Apellido: Elhadad
+NIA: 111111
+Edad: 20
+Grupo: DW1E
+email: ramez@gmail.com
+Telefono: 99999999
+Nota Final: 0
+Nota eva1: 0
+Nota eva2: 0
+Nota eva3: 0
+Nota eva4: 0
+-------------------------------------------------------
+Ruben
+Nombre: Ruben
+Apellido: Ramos
+NIA: 222222
+Edad: 25
+Grupo: DW1E
+email: ruben@gmail.com
+Telefono: 88888888
+Nota Final: 0
+Nota eva1: 0
+Nota eva2: 0
+Nota eva3: 0
+Nota eva4: 0
+-------------------------------------------------------
+Zyad
+Nombre: Zyad
+Apellido: Mazen
+NIA: 333333
+Edad: 22
+Grupo: DW1E
+email: mazen@gmail.com
+Telefono: 77777777
+Nota Final: 0
+Nota eva1: 0
+Nota eva2: 0
+Nota eva3: 0
+Nota eva4: 0
+-------------------------------------------------------
