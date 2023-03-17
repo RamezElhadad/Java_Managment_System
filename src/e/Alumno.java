@@ -11,11 +11,11 @@ public class Alumno {
 	private int NIA;
 	private int Edad;
 	private int Tel;
-	private int Nota1=0;
-	private int Nota2=0;
-	private int Nota3=0;
-	private int Nota4=0;
-	private int NotaF=0;
+	private float Nota1;
+	private float Nota2;
+	private float Nota3;
+	private float Nota4;
+	private float NotaF;
 	
 	public int getNIA() {
 		return NIA;
@@ -59,43 +59,43 @@ public class Alumno {
 	public void setTel(int tel) {
 		Tel = tel;
 	}
-	public int getNota1() {
+	public float getNota1() {
 		return Nota1;
 	}
-	public void setNota1(int nota1) {
+	public void setNota1(float nota1) {
 		Nota1 = nota1;
 	}
-	public int getNota2() {
+	public float getNota2() {
 		return Nota2;
 	}
-	public void setNota2(int nota2) {
+	public void setNota2(float nota2) {
 		Nota2 = nota2;
 	}
-	public int getNota3() {
+	public float getNota3() {
 		return Nota3;
 	}
-	public void setNota3(int nota3) {
+	public void setNota3(float nota3) {
 		Nota3 = nota3;
 	}
-	public int getNota4() {
+	public float getNota4() {
 		return Nota4;
 	}
-	public void setNota4(int nota4) {
+	public void setNota4(float nota4) {
 		Nota4 = nota4;
 	}
-	public int getNotaF() {
+	public float getNotaF() {
 		return NotaF;
 	}
-	public void setNotaM() {
+	public void setNotaF() {
 		if(Nota4!=0) {
-			NotaF=(Nota1+Nota2+Nota3+Nota4)/4;
+			this.NotaF=(Nota1+Nota2+Nota3+Nota4)/4;
 		}
 		else {
 			NotaF=(Nota1+Nota2+Nota3)/3;
 		}
 	}
 	
-	public Alumno(String nombre, String apellido, String grupo, String email, int nIA, int edad, int tel) {
+	public Alumno(String nombre, String apellido, String grupo, String email, int nIA, int edad, int tel,float n1,float n2,float n3,float n4) {
 		super();
 		this.Nombre = nombre;
 		this.Apellido = apellido;
@@ -104,48 +104,17 @@ public class Alumno {
 		this.NIA = nIA;
 		this.Edad = edad;
 		this.Tel = tel;
-	}
-	
-	public boolean añadarNotas() {
-		Scanner sc = new Scanner(System.in);
+		this.Nota1 = n1;
+		this.Nota2 = n2;
+		this.Nota3 = n3;
+		this.Nota4 = n4;
 		
-		System.out.println("Cuantas notas serán? 1/2/3/4 ");
-		int x=sc.nextInt();
-		
-		if(x==1) {
-			System.out.println("La Nota: ");
-			int y= sc.nextInt();
-			this.Nota1 = y;
-			return true;
-		}
-		else if(x==2){
-			for(int i=0;x<2;x++) {
-				System.out.println("La "+i+" Nota: ");
-				int y= sc.nextInt();
-			this.Nota2 = y;
-			}
-			return true;
-		}
-		else if(x==3){
-			for(int i=0;x<3;x++) {
-				System.out.println("La "+i+" Nota: ");
-				int y= sc.nextInt();
-			this.Nota2 = y;
-			}
-			return true;
-		}
-		else if(x==4){
-			for(int i=0;x<4;x++) {
-				System.out.println("La "+i+" Nota: ");
-				int y= sc.nextInt();
-			this.Nota2 = y;
-			}
-			return true;
+		if(Nota4!=0) {
+			this.NotaF=(Nota1+Nota2+Nota3+Nota4)/4;
 		}
 		else {
-			return false;
+			NotaF=(Nota1+Nota2+Nota3)/3;
 		}
-		
 	}
 	
 	

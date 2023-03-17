@@ -88,21 +88,25 @@ public class Administracion {
 			System.out.println("Nota: ");
 			z = sc.nextInt();
 			al.get(al.indexOf(a)).setNota1(z);
+			a.setNotaF();
 		}
 		else if(x==9) {
 			System.out.println("Nota: ");
 			z = sc.nextInt();
 			al.get(al.indexOf(a)).setNota2(z);
+			a.setNotaF();
 		}
 		else if(x==10) {
 			System.out.println("Nota: ");
 			z = sc.nextInt();
 			al.get(al.indexOf(a)).setNota3(z);
+			a.setNotaF();
 		}
 		else if(x==11) {
 			System.out.println("Nota: ");
 			z = sc.nextInt();
 			al.get(al.indexOf(a)).setNota4(z);
+			a.setNotaF();
 		}
 		else{
 			System.out.println("Error");
@@ -156,7 +160,6 @@ public class Administracion {
 		
 		try {
 			bw.flush();
-			bw.close();
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -165,20 +168,27 @@ public class Administracion {
 	
 	public static void main (String[] args) {
 		Administracion ad = new Administracion();
-		Alumno a1 = new Alumno("Ramez", "Elhadad", "DW1E", "ramez@gmail.com", 111111, 20, 99999999);
-		Alumno a2 = new Alumno("Ruben", "Ramos", "DW1E", "ruben@gmail.com", 222222, 25, 88888888);
-		Alumno a3 = new Alumno("Zyad", "Mazen", "DW1E", "mazen@gmail.com", 333333, 22, 77777777);
+		Alumno a1 = new Alumno("Ramez", "Elhadad", "DW1E", "ramez@gmail.com", 111111, 20, 99999999,10,10,10,0);
+		Alumno a2 = new Alumno("Ruben", "Ramos", "DW1E", "ruben@gmail.com", 222222, 25, 88888888,9,10,6,7);
+		Alumno a3 = new Alumno("Zyad", "Mazen", "DW1E", "mazen@gmail.com", 333333, 22, 77777777,5,5,5,5);
 		
-		a1.añadarNotas();
-		a2.añadarNotas();
-		a3.añadarNotas();
 
 		
 		ad.alta(a1);
 		ad.alta(a2);
 		ad.alta(a3);
 		ad.actualizar();
-		ad.verDatos(a2);
+		ad.lista();
 		
+
+System.out.println("");
+
+
+		ad.modifcar(a3);
+		ad.actualizar();
+		ad.lista();
+		
+
+
 	}
 }
