@@ -1,7 +1,6 @@
-Ramez
+Alumno: 111111
 Nombre: Ramez
 Apellido: Elhadad
-NIA: 111111
 Edad: 20
 Grupo: DW1E
 email: ramez@gmail.com
@@ -12,10 +11,9 @@ Nota eva2: 0
 Nota eva3: 0
 Nota eva4: 0
 -------------------------------------------------------
-Ruben
+Alumno: 222222
 Nombre: Ruben
 Apellido: Ramos
-NIA: 222222
 Edad: 25
 Grupo: DW1E
 email: ruben@gmail.com
@@ -26,10 +24,9 @@ Nota eva2: 0
 Nota eva3: 0
 Nota eva4: 0
 -------------------------------------------------------
-Zyad
+Alumno: 333333
 Nombre: Zyad
 Apellido: Mazen
-NIA: 333333
 Edad: 22
 Grupo: DW1E
 email: mazen@gmail.com

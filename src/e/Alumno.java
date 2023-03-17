@@ -86,8 +86,13 @@ public class Alumno {
 	public int getNotaF() {
 		return NotaF;
 	}
-	public void setNotaM(int notaF) {
-		NotaF = notaF;
+	public void setNotaM() {
+		if(Nota4!=0) {
+			NotaF=(Nota1+Nota2+Nota3+Nota4)/4;
+		}
+		else {
+			NotaF=(Nota1+Nota2+Nota3)/3;
+		}
 	}
 	
 	public Alumno(String nombre, String apellido, String grupo, String email, int nIA, int edad, int tel) {
@@ -104,26 +109,37 @@ public class Alumno {
 	public boolean añadarNotas() {
 		Scanner sc = new Scanner(System.in);
 		
-		System.out.println("Cual nota será? 1/2/3/4 ");
+		System.out.println("Cuantas notas serán? 1/2/3/4 ");
 		int x=sc.nextInt();
 		
-		System.out.println("La Nota: ");
-		int y= sc.nextInt();
-		
 		if(x==1) {
+			System.out.println("La Nota: ");
+			int y= sc.nextInt();
 			this.Nota1 = y;
 			return true;
 		}
 		else if(x==2){
+			for(int i=0;x<2;x++) {
+				System.out.println("La "+i+" Nota: ");
+				int y= sc.nextInt();
 			this.Nota2 = y;
+			}
 			return true;
 		}
 		else if(x==3){
-			this.Nota3 = y;
+			for(int i=0;x<3;x++) {
+				System.out.println("La "+i+" Nota: ");
+				int y= sc.nextInt();
+			this.Nota2 = y;
+			}
 			return true;
 		}
 		else if(x==4){
-			this.Nota4 = y;
+			for(int i=0;x<4;x++) {
+				System.out.println("La "+i+" Nota: ");
+				int y= sc.nextInt();
+			this.Nota2 = y;
+			}
 			return true;
 		}
 		else {
@@ -132,21 +148,10 @@ public class Alumno {
 		
 	}
 	
-	public int notaMedia() {
-		if(Nota4!=0) {
-			NotaF=(Nota1+Nota2+Nota3+Nota4)/4;
-		}
-		else {
-			NotaF=(Nota1+Nota2+Nota3)/3;
-		}
-		
-		return NotaF;
-				
-	}
 	
 	public String toString() {
 
-		return this.Nombre+"\nNombre: "+this.Nombre+"\nApellido: "+this.Apellido+"\nNIA: "+this.NIA+"\nEdad: "+this.Edad+"\nGrupo: "+this.grupo+"\nemail: "+this.email
+		return "Alumno: "+this.NIA+"\nNombre: "+this.Nombre+"\nApellido: "+this.Apellido+"\nEdad: "+this.Edad+"\nGrupo: "+this.grupo+"\nemail: "+this.email
 				+"\nTelefono: "+this.Tel+"\nNota Final: "+this.NotaF+"\nNota eva1: "+this.Nota1+"\nNota eva2: "+this.Nota2+"\nNota eva3: "+this.Nota3+"\nNota eva4: "
 				+this.Nota4+"\n-------------------------------------------------------";
 	}

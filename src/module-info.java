@@ -2,8 +2,8 @@
  * 
  */
 /**
- * @author Vespertino
+ * @author ramez
  *
  */
-module AdministracionAlumnos {
+module AdministracionAlumno {
 }

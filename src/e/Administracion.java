@@ -9,7 +9,7 @@ public class Administracion {
 	private BufferedWriter bw;
 	private File alumnos;
 	public Administracion() {
-		 alumnos = new File("C:\\Users\\Vespertino\\eclipse-workspace\\AdministracionAlumnos\\Alumnos\\Datos.txt");
+		 alumnos = new File("D:\\ELCURSO\\Eclipse\\Eclipse-workspace\\AdministracionAlumno\\Alumnos\\Datos.txt");
 		
 		try {
 			alumnos.createNewFile();
@@ -88,25 +88,21 @@ public class Administracion {
 			System.out.println("Nota: ");
 			z = sc.nextInt();
 			al.get(al.indexOf(a)).setNota1(z);
-			a.notaMedia();
 		}
 		else if(x==9) {
 			System.out.println("Nota: ");
 			z = sc.nextInt();
 			al.get(al.indexOf(a)).setNota2(z);
-			a.notaMedia();
 		}
 		else if(x==10) {
 			System.out.println("Nota: ");
 			z = sc.nextInt();
 			al.get(al.indexOf(a)).setNota3(z);
-			a.notaMedia();
 		}
 		else if(x==11) {
 			System.out.println("Nota: ");
 			z = sc.nextInt();
 			al.get(al.indexOf(a)).setNota4(z);
-			a.notaMedia();
 		}
 		else{
 			System.out.println("Error");
@@ -118,8 +114,12 @@ public class Administracion {
 		try {
 			data=br.readLine();
 			while(data!=null) {
-				if(a.getNombre().equals(data.toString())) {
+				if("Alumno: ".concat(Integer.toString(a.getNIA())).equals(data)) {
+					for(int x=0;x<13;x++) {
 					System.out.println(data);
+					data=br.readLine();
+
+					}
 				}
 				data=br.readLine();
 			}
@@ -169,13 +169,16 @@ public class Administracion {
 		Alumno a2 = new Alumno("Ruben", "Ramos", "DW1E", "ruben@gmail.com", 222222, 25, 88888888);
 		Alumno a3 = new Alumno("Zyad", "Mazen", "DW1E", "mazen@gmail.com", 333333, 22, 77777777);
 		
+		a1.añadarNotas();
+		a2.añadarNotas();
+		a3.añadarNotas();
 
 		
 		ad.alta(a1);
 		ad.alta(a2);
 		ad.alta(a3);
 		ad.actualizar();
-		ad.verDatos(a1);
+		ad.verDatos(a2);
 		
 	}
 }
