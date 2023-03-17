@@ -1,78 +1,13 @@
-Alumno: 111111
-Nombre: Ramez
-Apellido: Elhadad
-Edad: 20
-Grupo: DW1E
-email: ramez@gmail.com
-Telefono: 99999999
-Nota Final: 10.0
-Nota eva1: 10.0
-Nota eva2: 10.0
-Nota eva3: 10.0
-Nota eva4: 0.0
--------------------------------------------------------
-Alumno: 222222
-Nombre: Ruben
-Apellido: Ramos
-Edad: 25
-Grupo: DW1E
-email: ruben@gmail.com
-Telefono: 88888888
-Nota Final: 8.0
-Nota eva1: 9.0
-Nota eva2: 10.0
-Nota eva3: 6.0
-Nota eva4: 7.0
--------------------------------------------------------
-Alumno: 333333
-Nombre: Zyad
-Apellido: Mazen
-Edad: 22
-Grupo: DW1E
-email: mazen@gmail.com
-Telefono: 77777777
-Nota Final: 5.0
-Nota eva1: 5.0
-Nota eva2: 5.0
-Nota eva3: 5.0
-Nota eva4: 5.0
--------------------------------------------------------
-Alumno: 111111
-Nombre: Ramez
-Apellido: Elhadad
-Edad: 20
-Grupo: DW1E
-email: ramez@gmail.com
-Telefono: 99999999
-Nota Final: 10.0
-Nota eva1: 10.0
-Nota eva2: 10.0
-Nota eva3: 10.0
-Nota eva4: 0.0
--------------------------------------------------------
-Alumno: 222222
-Nombre: Ruben
-Apellido: Ramos
-Edad: 25
-Grupo: DW1E
-email: ruben@gmail.com
-Telefono: 88888888
-Nota Final: 8.0
-Nota eva1: 9.0
-Nota eva2: 10.0
-Nota eva3: 6.0
-Nota eva4: 7.0
--------------------------------------------------------
-Alumno: 333333
-Nombre: Zyad
-Apellido: Mazen
-Edad: 22
-Grupo: DW1E
-email: mazen@gmail.com
-Telefono: 77777777
-Nota Final: 5.0
-Nota eva1: 5.0
-Nota eva2: 5.0
-Nota eva3: 5.0
-Nota eva4: 5.0
+Alumno: 11111111
+Nombre: 34341
+Apellido: 41341
+Edad: 344
+Grupo: 13
+email: 4134
+Telefono: 34
+Nota Final: 104320.0
+Nota eva1: 413413.0
+Nota eva2: 41.0
+Nota eva3: 3413.0
+Nota eva4: 413.0
 -------------------------------------------------------
