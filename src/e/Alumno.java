@@ -1,8 +1,9 @@
 package e;
 
+import java.io.Serializable;
 import java.util.Scanner;
 
-public class Alumno {
+public class Alumno implements Serializable{
 	
 	private String Nombre;
 	private String Apellido;
