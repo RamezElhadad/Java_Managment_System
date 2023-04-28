@@ -1,24 +1,16 @@
+
 package e;
 
 import java.util.*;
 import java.io.*;
+import java.nio.file.Files;
 
 public class Administracion {
 	private ArrayList<Alumno> al = new ArrayList();
 	private BufferedReader br;
 	private BufferedWriter bw;
 	private File alumnos;
-	public Administracion() {
-		 alumnos = new File("D:\\ELCURSO\\Eclipse\\Eclipse-workspace\\AdministracionAlumno\\Alumnos\\Datos.txt");
-		
-		try {
-			alumnos.createNewFile();
-			br = new BufferedReader(new FileReader(alumnos));
-			bw = new BufferedWriter(new FileWriter(alumnos));
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-	}
+	public Administracion() {}
 	
 	public void alta(Alumno a) {
 		
@@ -147,7 +139,16 @@ public class Administracion {
 	}
 	
 	public void actualizar() {
+		alumnos = new File("C:\\Users\\Vespertino\\eclipse-workspace\\AdministracionAlumnos\\Alumnos\\Datos.txt");
 		
+		try {
+			alumnos.createNewFile();
+			br = new BufferedReader(new FileReader(alumnos));
+			bw = new BufferedWriter(new FileWriter(alumnos,false));
+		} catch (IOException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
 		for(Alumno a:al) {
 			try {
 				bw.write(a.toString());
@@ -168,27 +169,113 @@ public class Administracion {
 	
 	public static void main (String[] args) {
 		Administracion ad = new Administracion();
+		Scanner sc = new Scanner(System.in);
+		
+		Alumno a;
 		Alumno a1 = new Alumno("Ramez", "Elhadad", "DW1E", "ramez@gmail.com", 111111, 20, 99999999,10,10,10,0);
 		Alumno a2 = new Alumno("Ruben", "Ramos", "DW1E", "ruben@gmail.com", 222222, 25, 88888888,9,10,6,7);
 		Alumno a3 = new Alumno("Zyad", "Mazen", "DW1E", "mazen@gmail.com", 333333, 22, 77777777,5,5,5,5);
 		
-
+		int y,nia,edad;
+		float n1,n2,n3,n4;
+		long tel;
+		String resp,nomb,app,grop,mail;
 		
-		ad.alta(a1);
-		ad.alta(a2);
-		ad.alta(a3);
-		ad.actualizar();
-		ad.lista();
 		
-
-System.out.println("");
-
-
-		ad.modifcar(a3);
-		ad.actualizar();
-		ad.lista();
 		
+<<<<<<< HEAD
 		ad.actualizar();
+=======
+		do {
+			System.out.println("1.Alta \n2.Baja \n3.Modificar \n4.Ver Datos \n5.Lista");
+			System.out.println("Elige un opcion: ");
+			y = sc.nextInt();
+			
+			if(y==1) {
+				System.out.println("NIA: ");
+				nia=sc.nextInt();
+				
+				System.out.println("Nombre: ");
+				nomb=sc.next();
+				
+				System.out.println("Apellido: ");
+				app=sc.next();
+				
+				System.out.println("Edad: ");
+				edad=sc.nextInt();
+				
+				System.out.println("Grupo: ");
+				grop=sc.next();
+				
+				System.out.println("Email: ");
+				mail=sc.next();
+				
+				System.out.println("Telefono: ");
+				tel=sc.nextInt();
+				
+				System.out.println("Nota eva1: ");
+				n1=sc.nextInt();
+				
+				System.out.println("Nota eva2: ");
+				n2=sc.nextInt();
+				
+				System.out.println("Nota eva3: ");
+				n3=sc.nextInt();
+				
+				System.out.println("Nota eva4: ");
+				n4=sc.nextInt();
+				
+				a = new Alumno(nomb, app, grop, mail, nia, edad, tel,n1,n2,n3,n4);
+				ad.alta(a);
+				ad.actualizar();
+			}
+			else if(y==2) {
+				System.out.println("Escribe el NIA: ");
+				y=sc.nextInt();
+				
+				for(Alumno i: ad.al) {
+					if(i.getNIA()==y) {
+						ad.baja(i);
+						ad.actualizar();
+					}
+				}
+			}
+			else if(y==3) {
+				System.out.println("Escribe el NIA: ");
+				y=sc.nextInt();
+				
+				for(Alumno i: ad.al) {
+					if(i.getNIA()==y) {
+						ad.modifcar(i);
+						ad.actualizar();
+					}
+				}
+			}
+			else if(y==4) {
+				System.out.println("Escribe el NIA: ");
+				y=sc.nextInt();
+				
+				for(Alumno i: ad.al) {
+					if(i.getNIA()==y) {
+						ad.verDatos(i);
+						ad.actualizar();
+					}
+				}
+			}
+			else if(y==5) {
+				ad.lista();
+			}
+			else {
+				System.out.println("Error!! ");
+			}
+			
+			System.out.println("Algo mas?  SI/NO");
+			resp=sc.next();
+		}
+		while(resp.charAt(0)=='S'||resp.charAt(0)=='s');
+		
+		System.out.println("Hasta luego");
+>>>>>>> 6e8d3ddd8e6cac56d6c5534f4c2b94dca8d9b48a
 
 
 	}

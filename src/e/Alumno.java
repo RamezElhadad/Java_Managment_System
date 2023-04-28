@@ -1,8 +1,9 @@
 package e;
 
+import java.io.Serializable;
 import java.util.Scanner;
 
-public class Alumno {
+public class Alumno implements Serializable{
 	
 	private String Nombre;
 	private String Apellido;
@@ -10,7 +11,7 @@ public class Alumno {
 	private String email;
 	private int NIA;
 	private int Edad;
-	private int Tel;
+	private long Tel;
 	private float Nota1;
 	private float Nota2;
 	private float Nota3;
@@ -53,10 +54,10 @@ public class Alumno {
 	public void setEdad(int edad) {
 		Edad = edad;
 	}
-	public int getTel() {
+	public long getTel() {
 		return Tel;
 	}
-	public void setTel(int tel) {
+	public void setTel(long tel) {
 		Tel = tel;
 	}
 	public float getNota1() {
@@ -95,7 +96,7 @@ public class Alumno {
 		}
 	}
 	
-	public Alumno(String nombre, String apellido, String grupo, String email, int nIA, int edad, int tel,float n1,float n2,float n3,float n4) {
+	public Alumno(String nombre, String apellido, String grupo, String email, int nIA, int edad, long tel,float n1,float n2,float n3,float n4) {
 		super();
 		this.Nombre = nombre;
 		this.Apellido = apellido;

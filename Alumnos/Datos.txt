@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 Alumno: 111111
 Nombre: Ramez
 Apellido: Elhadad
@@ -36,4 +37,18 @@ Nota eva1: 5.0
 Nota eva2: 5.0
 Nota eva3: 5.0
 Nota eva4: 5.0
+=======
+Alumno: 1
+Nombre: 1
+Apellido: 1
+Edad: 1
+Grupo: 11
+email: 1
+Telefono: 1
+Nota Final: 1.0
+Nota eva1: 1.0
+Nota eva2: 1.0
+Nota eva3: 1.0
+Nota eva4: 1.0
+>>>>>>> 6e8d3ddd8e6cac56d6c5534f4c2b94dca8d9b48a
 -------------------------------------------------------
