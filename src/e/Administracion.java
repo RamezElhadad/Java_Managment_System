@@ -188,6 +188,7 @@ System.out.println("");
 		ad.actualizar();
 		ad.lista();
 		
+		ad.actualizar();
 
 
 	}
