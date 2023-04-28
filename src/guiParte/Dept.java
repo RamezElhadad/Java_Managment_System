@@ -20,8 +20,16 @@ public class Dept {
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
-		JButton alta = new JButton("New button");
+		JButton alta = new JButton("Dar Alta");
 		alta.setFont(new Font("Serif", Font.BOLD, 15));
+		alta.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				frame.setVisible(false);
+				
+				Funciones.show();
+			}
+		});
+		
 		alta.setBounds(187, 11, 259, 74);
 		frame.getContentPane().add(alta);
 		
@@ -29,23 +37,50 @@ public class Dept {
 		atras.setFont(new Font("MS Gothic", Font.BOLD | Font.ITALIC, 15));
 		atras.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				frame.setVisible(false);
+				
+				Ventana1.show();
 			}
 		});
 		atras.setBounds(10, 11, 123, 43);
 		frame.getContentPane().add(atras);
 		
-		JButton mod = new JButton("New button");
+		JButton mod = new JButton("Dar de Baja");
 		mod.setFont(new Font("Serif", Font.BOLD, 15));
+		mod.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				frame.setVisible(false);
+				
+				Funciones.show();
+			}
+		});
+		
 		mod.setBounds(187, 103, 259, 74);
 		frame.getContentPane().add(mod);
 		
-		JButton baja = new JButton("New button");
+		JButton baja = new JButton("Modificar");
 		baja.setFont(new Font("Serif", Font.BOLD, 15));
+		baja.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				frame.setVisible(false);
+				
+				Funciones.show();
+			}
+		});
+		
 		baja.setBounds(187, 200, 259, 74);
 		frame.getContentPane().add(baja);
 		
-		JButton ver = new JButton("New button");
+		JButton ver = new JButton("Ver Lista");
 		ver.setFont(new Font("Serif", Font.BOLD, 15));
+		ver.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				frame.setVisible(false);
+				
+				Funciones.show();
+			}
+		});
+		
 		ver.setBounds(187, 293, 259, 74);
 		frame.getContentPane().add(ver);
 		

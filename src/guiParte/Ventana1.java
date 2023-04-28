@@ -25,11 +25,11 @@ public class Ventana1 {
 		JButton emp = new JButton("Gestionar Emp");
 		emp.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				frame.setVisible(false);
-				Dept action = new Dept();
-				action.show();
-				
 				nombre = "Emp";
+				
+				frame.setVisible(false);
+				Dept.show();
+				
 			}
 		});
 		frame.getContentPane().add(emp);
@@ -38,11 +38,10 @@ public class Ventana1 {
 		frame.getContentPane().add(dept);
 		dept.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				frame.setVisible(false);
-				Dept action = new Dept();
-				action.show();
-				
 				nombre = "Dept";
+				frame.setVisible(false);
+				Dept.show();
+				
 			}
 		});
 		
