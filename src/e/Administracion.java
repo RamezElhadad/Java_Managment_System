@@ -184,7 +184,7 @@ public class Administracion {
 		
 		
 		do {
-			System.out.println("1.Alta \n2.Baja \n3.Modificar \4.Ver Datos \n5.Lista");
+			System.out.println("1.Alta \n2.Baja \n3.Modificar \n4.Ver Datos \n5.Lista");
 			System.out.println("Elige un opcion: ");
 			y = sc.nextInt();
 			
@@ -271,7 +271,7 @@ public class Administracion {
 		}
 		while(resp.charAt(0)=='S'||resp.charAt(0)=='s');
 		
-		
+		System.out.println("Hasta luego");
 
 
 	}

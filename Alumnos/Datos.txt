@@ -1,39 +1,13 @@
-Alumno: 55
-Nombre: 5
-Apellido: 5
-Edad: 5
-Grupo: 55
-email: 5
-Telefono: 5
-Nota Final: 17.5
-Nota eva1: 5.0
-Nota eva2: 5.0
-Nota eva3: 55.0
-Nota eva4: 5.0
--------------------------------------------------------
-Alumno: 5
-Nombre: 5
-Apellido: 5
-Edad: 5
-Grupo: 5
-email: 55
-Telefono: 5
-Nota Final: 5.0
-Nota eva1: 5.0
-Nota eva2: 5.0
-Nota eva3: 5.0
-Nota eva4: 5.0
--------------------------------------------------------
-Alumno: 2
-Nombre: 22
-Apellido: 2
-Edad: 2
-Grupo: 2
-email: 2
-Telefono: 22
-Nota Final: 7.0
-Nota eva1: 2.0
-Nota eva2: 2.0
-Nota eva3: 2.0
-Nota eva4: 22.0
+Alumno: 1
+Nombre: 1
+Apellido: 1
+Edad: 1
+Grupo: 11
+email: 1
+Telefono: 1
+Nota Final: 1.0
+Nota eva1: 1.0
+Nota eva2: 1.0
+Nota eva3: 1.0
+Nota eva4: 1.0
 -------------------------------------------------------
