@@ -20,32 +20,38 @@ public class Ventana1 {
 		JFrame frame = new JFrame("EMPRESA PATATA_Inicio");
 		frame.setBounds(200, 200, 721, 417);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frame.getContentPane().setLayout(new GridLayout(3,1));
+		frame.getContentPane().setLayout(null);
 		
 		JButton emp = new JButton("Gestionar Emp");
+		emp.setSize(196, 100);
+		emp.setLocation(40, 68);
 		emp.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				nombre = "Emp";
 				
 				frame.setVisible(false);
-				Dept.show();
+				Opciones.show();
 				
 			}
 		});
 		frame.getContentPane().add(emp);
 		
 		JButton dept = new JButton("Gestionar Dept");
+		dept.setSize(196, 100);
+		dept.setLocation(411, 68);
 		frame.getContentPane().add(dept);
 		dept.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				nombre = "Dept";
 				frame.setVisible(false);
-				Dept.show();
+				Opciones.show();
 				
 			}
 		});
 		
 		JButton salir = new JButton("Salir");
+		salir.setLocation(233, 218);
+		salir.setSize(196, 100);
 		salir.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				System.exit(0);
@@ -55,5 +61,4 @@ public class Ventana1 {
 		
 		frame.setVisible(true);
 	}
-
 }

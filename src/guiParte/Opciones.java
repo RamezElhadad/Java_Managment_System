@@ -7,12 +7,14 @@ import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.Font;
-public class Dept {
+public class Opciones {
 
 	public static void main(String[] args) {
 
 		show();
 	}
+	
+	static int caso;
 	
 	public static void show() {
 		JFrame frame = new JFrame("EMPRESA PATATA_"+Ventana1.nombre);
@@ -23,10 +25,9 @@ public class Dept {
 		JButton alta = new JButton("Dar Alta");
 		alta.setFont(new Font("Serif", Font.BOLD, 15));
 		alta.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				frame.setVisible(false);
-				
-				Funciones.show();
+			public void actionPerformed(ActionEvent e) {	
+				caso = 1;
+				Info.show();
 			}
 		});
 		
@@ -37,21 +38,19 @@ public class Dept {
 		atras.setFont(new Font("MS Gothic", Font.BOLD | Font.ITALIC, 15));
 		atras.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				frame.setVisible(false);
 				
 				Ventana1.show();
 			}
 		});
-		atras.setBounds(10, 11, 123, 43);
+		atras.setBounds(10, 324, 123, 43);
 		frame.getContentPane().add(atras);
 		
 		JButton mod = new JButton("Dar de Baja");
 		mod.setFont(new Font("Serif", Font.BOLD, 15));
 		mod.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				frame.setVisible(false);
-				
-				Funciones.show();
+				caso = 2;
+				Info.show();
 			}
 		});
 		
@@ -62,9 +61,8 @@ public class Dept {
 		baja.setFont(new Font("Serif", Font.BOLD, 15));
 		baja.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				frame.setVisible(false);
-				
-				Funciones.show();
+				caso = 3;
+				Info.show();
 			}
 		});
 		
@@ -75,9 +73,8 @@ public class Dept {
 		ver.setFont(new Font("Serif", Font.BOLD, 15));
 		ver.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				frame.setVisible(false);
-				
-				Funciones.show();
+				caso = 4;
+				Finale.show();
 			}
 		});
 		

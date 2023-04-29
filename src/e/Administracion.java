@@ -183,9 +183,8 @@ public class Administracion {
 		
 		
 		
-<<<<<<< HEAD
+
 		ad.actualizar();
-=======
 		do {
 			System.out.println("1.Alta \n2.Baja \n3.Modificar \n4.Ver Datos \n5.Lista");
 			System.out.println("Elige un opcion: ");
@@ -275,7 +274,7 @@ public class Administracion {
 		while(resp.charAt(0)=='S'||resp.charAt(0)=='s');
 		
 		System.out.println("Hasta luego");
->>>>>>> 6e8d3ddd8e6cac56d6c5534f4c2b94dca8d9b48a
+
 
 
 	}
