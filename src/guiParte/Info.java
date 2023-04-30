@@ -7,6 +7,8 @@ import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+
 import java.awt.Color;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
@@ -27,11 +29,13 @@ public class Info {
 	 static String sal;
 	 static String loc;
 	 static String dname;
+	 static boolean deptnoch,enamech,jobch,hirech,mgrch,commch,salch,locch,dnamech;
 	 private static JTextField txt3;
 	 private static JTextField txt5;
 	 private static JTextField txt6;
 	 private static JTextField txt7;
 	 private static JTextField txt8;
+	 private static JCheckBox chDeptno,chEname,chJob,chMgr,chHire,chSal,chComm,chDname,chLoc;
 
 	public static void main(String[] args) {
 		show();
@@ -179,6 +183,7 @@ public class Info {
 		txt8.setBounds(503, 210, 192, 35);
 		frame.getContentPane().add(txt8);
 		
+		
 		}
 //-------------------------------------Caso 1- Dept-----------------------------------------------------------------------	
 	
@@ -233,6 +238,11 @@ public class Info {
 		txt4.setBounds(143, 211, 192, 35);
 		frame.getContentPane().add(txt4);
 		
+		deptno = txt.getText();
+		dname = txt2.getText();
+		loc = txt4.getText();
+		
+		
 		}
 //-------------------------------------Caso 2- Emp && Dept-----------------------------------------------------------------------	
 		
@@ -272,6 +282,11 @@ public class Info {
 			txt2.setBounds(143, 89, 192, 35);
 			frame.getContentPane().add(txt2);
 			}
+			
+			deptno = txt.getText();
+			dname = txt2.getText();
+			
+			
 		}
 //-------------------------------------Caso 3- Emp-----------------------------------------------------------------------	
 		
@@ -408,36 +423,32 @@ public class Info {
 		txt8.setBounds(503, 210, 192, 35);
 		frame.getContentPane().add(txt8);
 		
-		JCheckBox chDeptno = new JCheckBox("");
-		chDeptno.setBounds(10, 34, 97, 23);
+		chDeptno = new JCheckBox("");
+		chDeptno.setBounds(10, 34, 21, 23);
 		frame.getContentPane().add(chDeptno);
 		
-		JCheckBox chEmpno = new JCheckBox("");
-		chEmpno.setBounds(10, 97, 97, 23);
-		frame.getContentPane().add(chEmpno);
-		
-		JCheckBox chEname = new JCheckBox("");
-		chEname.setBounds(10, 159, 97, 23);
+		chEname = new JCheckBox("");
+		chEname.setBounds(10, 159, 21, 23);
 		frame.getContentPane().add(chEname);
 		
-		JCheckBox chJob = new JCheckBox("");
-		chJob.setBounds(10, 219, 97, 23);
+		chJob = new JCheckBox("");
+		chJob.setBounds(10, 219, 21, 23);
 		frame.getContentPane().add(chJob);
 		
-		JCheckBox chMgr = new JCheckBox("");
-		chMgr.setBounds(378, 34, 97, 23);
+		chMgr = new JCheckBox("");
+		chMgr.setBounds(378, 34, 21, 23);
 		frame.getContentPane().add(chMgr);
 		
-		JCheckBox chHire = new JCheckBox("");
-		chHire.setBounds(378, 97, 97, 23);
+		chHire = new JCheckBox("");
+		chHire.setBounds(378, 97, 21, 23);
 		frame.getContentPane().add(chHire);
 		
-		JCheckBox chSal = new JCheckBox("");
-		chSal.setBounds(378, 159, 97, 23);
+		chSal = new JCheckBox("");
+		chSal.setBounds(378, 159, 21, 23);
 		frame.getContentPane().add(chSal);
 		
-		JCheckBox chComm = new JCheckBox("");
-		chComm.setBounds(378, 219, 97, 23);
+		chComm = new JCheckBox("");
+		chComm.setBounds(378, 219, 21, 23);
 		frame.getContentPane().add(chComm);
 		
 		JLabel lelMarca = new JLabel("Marca lo que quieres quitar");
@@ -446,8 +457,10 @@ public class Info {
 		lelMarca.setBounds(214, 325, 220, 42);
 		frame.getContentPane().add(lelMarca);
 		
+
 		
-		}
+	}
+	
 //-------------------------------------Caso 3- Dept-----------------------------------------------------------------------	
 		
 		
@@ -501,24 +514,24 @@ public class Info {
 			txt4.setBounds(143, 211, 192, 35);
 			frame.getContentPane().add(txt4);
 			
-			JCheckBox chDeptno = new JCheckBox("");
-			chDeptno.setBounds(10, 34, 97, 23);
-			frame.getContentPane().add(chDeptno);
-			
-			JCheckBox chDname = new JCheckBox("");
-			chDname.setBounds(10, 124, 97, 23);
+			chDname = new JCheckBox("");
+			chDname.setBounds(10, 124, 26, 23);
 			frame.getContentPane().add(chDname);
 			
-			JCheckBox chLoc = new JCheckBox("");
-			chLoc.setBounds(10, 222, 97, 23);
+			chLoc = new JCheckBox("");
+			chLoc.setBounds(10, 222, 26, 23);
 			frame.getContentPane().add(chLoc);
+			
 			
 			JLabel lelMarca = new JLabel("Marca lo que quieres quitar");
 			lelMarca.setFont(new Font("Comic Sans MS", Font.BOLD | Font.ITALIC, 15));
 			lelMarca.setHorizontalAlignment(SwingConstants.CENTER);
 			lelMarca.setBounds(214, 325, 220, 42);
 			frame.getContentPane().add(lelMarca);
-	}
+			
+			
+	}	
+	
 			
 //-------------------------------------Atras - Enviar-----------------------------------------------------------------------	
 		
@@ -540,18 +553,40 @@ public class Info {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				deptno = txt.getText();
-				empno = txt2.getText();
-				ename = txt3.getText();
-				job = txt4.getText();
-				mgr = txt5.getText();
-				hiredate = txt6.getText();
-				sal = txt7.getText();
-				comm = txt8.getText();
-				dname = txt2.getText();
-				loc = txt3.getText();
 				
-	
+				if(Ventana1.nombre == "Emp") {
+					empno = txt2.getText();
+					ename = txt3.getText();
+					job = txt4.getText();
+					mgr = txt5.getText();
+					hiredate = txt6.getText();
+					sal = txt7.getText();
+					comm = txt8.getText();
+					deptno = txt.getText();
+				}
+				else {
+					deptno = txt.getText();
+					dname = txt2.getText();
+					loc = txt4.getText();
+				}
+				
+				if(Opciones.caso == 3 && Ventana1.nombre == "Emp") {
+					deptnoch = chDeptno.isSelected();
+					enamech = chEname.isSelected();
+					jobch = chJob.isSelected();
+					mgrch = chMgr.isSelected();
+					hirech = chHire.isSelected();
+					salch = chSal.isSelected();
+					commch = chComm.isSelected();
+				}
+				else if(Opciones.caso == 3 && Ventana1.nombre == "Dept") {
+					dnamech = chDname.isSelected();
+					locch = chLoc.isSelected();
+				}
+				
+				DB.res();
+				Finale.show();
+
 			}
 			
 		});

@@ -13,7 +13,7 @@ public class Ventana1 {
 		show();
 	}
 	
-	static String nombre = "";
+	static String nombre;
 	
 	
 	public static void show() {

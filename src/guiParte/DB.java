@@ -3,67 +3,112 @@ import java.sql.*;
 public class DB {
 
 	static String result = "";
-	static String url = "jdbc:mysql://localhost:3306/empresa";
-	static String user = "Ramez";
-	static String pwd = "Ramez2003";
-	public static void main(String[] args) {
-		
-		System.out.println(result);
-	}
+	private static String url = "jdbc:mysql://localhost:3306/empresa";
+	private static String user = "Ramez";
+	private static String pwd = "Ramez2003";
+	private static String name = Ventana1.nombre;
 	
 	public static void res(){
-		try (Connection con = DriverManager.getConnection(url, user, pwd);){
-			
+		try {
+			Connection con = DriverManager.getConnection(url, user, pwd);
 			Statement st = con.createStatement();
 			
 			
 			if(Opciones.caso == 1) {
+				int rs;
 				
 				if(Ventana1.nombre == "Emp") {
-					int rs = st.executeUpdate("Insert into " + Ventana1.nombre + " values( " + Info.empno + Info.ename + Info.job + 
-							Info.mgr + Info.hiredate + Info.sal + Info.comm + Info.deptno + ");");
+					rs = st.executeUpdate("Insert into " +name + " values( " + "\"" + Info.empno + "\"" +" ,"+ "\"" + Info.ename + "\"" +", "+ "\"" + Info.job + "\"" + " ,"+
+							"\"" + Info.mgr +"\"" + " ,"+ "\"" + Info.hiredate +"\"" +" ,"+ "\"" + Info.sal +"\"" +" ,"+ "\"" + Info.comm +"\"" +" ,"+ "\"" + Info.deptno +"\"" + ");");
 				}
 				else {
-					int rs = st.executeUpdate("Insert into " + Ventana1.nombre + " values( " + Info.deptno +  Info.dname + Info.loc + ");");
+					rs = st.executeUpdate("Insert into " +name + " values( " + "\"" + Info.deptno +"\"" + " ,"+ "\"" + Info.dname +"\"" +" ,"+ "\"" + Info.loc +"\"" + ");");
 				}
+				result = Integer.toString(rs);
 			}
 			else if(Opciones.caso == 2) {
+				int rs;
 				
 				if(Ventana1.nombre == "Emp") {
-					int rs = st.executeUpdate("Delete from " + Ventana1.nombre + " where empno = " + Info.empno + ";");
+					rs = st.executeUpdate("Delete from " +name + " where empno = " +"\"" + Info.empno +"\"" + ";");
 				}
 				else {
-					int rs = st.executeUpdate("Delete from " + Ventana1.nombre + " where deptno = " + Info.deptno + ";");
+					rs = st.executeUpdate("Delete from " +name + " where deptno = " +"\"" + Info.deptno +"\"" + ";");
 				}
+				result = Integer.toString(rs);
 			}
 			else if(Opciones.caso == 3) {
+				int rs = 0;
 				
 				if(Ventana1.nombre == "Emp") {
-					int rs = st.executeUpdate("Update " + Ventana1.nombre + " set " + Info.empno + ";");
+										
+					if(Info.deptnoch == true ) {
+						rs = st.executeUpdate("Update " +name + " set deptno = " +"\"" + Info.deptno +"\"" + " where empno = " + "\"" +Info.empno + "\"" +";");
+					}
+					
+					if(Info.enamech == true) {
+						rs = st.executeUpdate("Update " +name + " set ename = " +"\"" + Info.ename +"\"" + " where empno = " +"\"" + Info.empno +"\"" + ";");
+					}
+					
+					if(Info.jobch == true) {
+						rs = st.executeUpdate("Update " +name + " set job = " + "\"" +Info.job +"\"" + " where empno = " +"\"" + Info.empno + "\"" +";");
+					}
+					
+					if(Info.mgrch == true) {
+						rs = st.executeUpdate("Update " +name + " set mgr = " +"\"" + Info.mgr +"\"" + " where empno = " + "\"" +Info.empno +"\"" + ";");
+					}
+					
+					if(Info.hirech == true) {
+						rs = st.executeUpdate("Update " +name + " set hiredate = " +"\"" + Info.hiredate +"\"" + " where empno = " +"\"" + Info.empno +"\"" + ";");
+					}
+					
+					if(Info.salch == true) {
+						rs = st.executeUpdate("Update " +name + " set sal = " +"\"" + Info.sal +"\"" + " where empno = " +"\"" + Info.empno +"\"" + ";");
+					}
+					
+					if(Info.commch == true) {
+						rs = st.executeUpdate("Update " +name + " set comm = " +"\"" + Info.comm +"\"" + " where empno = " +"\"" + Info.empno +"\"" + ";");
+					}
+					
 				}
 				else {
-					int rs = st.executeUpdate("Update " + Ventana1.nombre + " set " + Info.empno + ";");
+
+					if(Info.dnamech == true) {
+						rs = st.executeUpdate("Update " +name + " set dname = " +"\"" + Info.dname +"\"" + " where deptno = " +"\"" + Info.deptno +"\"" + ";");
+					}
+					
+					if(Info.locch == true) {
+						rs = st.executeUpdate("Update " +name + " set loc = " +"\"" + Info.loc +"\"" + " where deptno = " +"\"" + Info.deptno +"\"" + ";");
+					}
+					
 				}
+				
+				result = Integer.toString(rs);
 			}
 			else {
 				
-				ResultSet rs = st.executeQuery("Select * from " + Ventana1.nombre + ";");
-				
-				while(rs.next()) {
+				ResultSet rs = st.executeQuery("Select * from " +name + ";");
+				if(Ventana1.nombre == "Emp") {
 					
-					if(Ventana1.nombre.equals("Emp")) {
+					while(rs.next()) {
+					
 						result = result + rs.getString(1) + " " + rs.getString(2) + " " + rs.getString(3) + " " + rs.getString(4) + " "
-								+ rs.getString(5) + " " + rs.getString(6) + " " + rs.getString(7) + " " + rs.getString(8) + " ";
+								+ rs.getString(5) + " " + rs.getString(6) + " " + rs.getString(7) + " " + rs.getString(8) + "\n";
 					}
-					else {
-						result = result + rs.getString(1) + " " + rs.getString(2) + " " + rs.getString(3) + " ";
-					}
-					System.out.println(result);
 				}
+					else {
+						
+						while(rs.next()) {
+							result = result + rs.getString(1) + " " + rs.getString(2) + " " + rs.getString(3) + "\n";
+						}
+					}
+					
+				
 				
 			}
 			
-		} catch (SQLException e) {
+			con.close();
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}

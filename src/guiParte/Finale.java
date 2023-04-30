@@ -25,6 +25,8 @@ public class Finale {
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
+		JOptionPane.showMessageDialog(frame, DB.result, "Result", JOptionPane.INFORMATION_MESSAGE);
+		
 		JButton si = new JButton("SI");
 		si.setFont(new Font("Serif", Font.BOLD, 15));
 		si.addActionListener(new ActionListener() {
@@ -59,8 +61,6 @@ public class Finale {
 		
 		frame.setVisible(true);
 		
-		DB.res();
-		JOptionPane.showMessageDialog(frame, DB.result, "Result", JOptionPane.INFORMATION_MESSAGE);
 		
 	}
 }
