@@ -238,10 +238,6 @@ public class Info {
 		txt4.setBounds(143, 211, 192, 35);
 		frame.getContentPane().add(txt4);
 		
-		deptno = txt.getText();
-		dname = txt2.getText();
-		loc = txt4.getText();
-		
 		
 		}
 //-------------------------------------Caso 2- Emp && Dept-----------------------------------------------------------------------	
@@ -282,9 +278,6 @@ public class Info {
 			txt2.setBounds(143, 89, 192, 35);
 			frame.getContentPane().add(txt2);
 			}
-			
-			deptno = txt.getText();
-			dname = txt2.getText();
 			
 			
 		}
@@ -554,7 +547,7 @@ public class Info {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				
-				if(Ventana1.nombre == "Emp") {
+				if(Ventana1.nombre == "Emp" && Opciones.caso == 1) {
 					empno = txt2.getText();
 					ename = txt3.getText();
 					job = txt4.getText();
@@ -564,13 +557,20 @@ public class Info {
 					comm = txt8.getText();
 					deptno = txt.getText();
 				}
-				else {
+				else if (Ventana1.nombre == "Dept" && Opciones.caso == 1){
 					deptno = txt.getText();
 					dname = txt2.getText();
 					loc = txt4.getText();
 				}
-				
-				if(Opciones.caso == 3 && Ventana1.nombre == "Emp") {
+				else if(Ventana1.nombre == "Emp" && Opciones.caso ==2) {
+					deptno = txt.getText();
+					empno = txt2.getText();
+				}
+				else if(Ventana1.nombre == "Dept" && Opciones.caso == 2) {
+					deptno = txt.getText();
+					
+				}
+				else if(Opciones.caso == 3 && Ventana1.nombre == "Emp") {
 					deptnoch = chDeptno.isSelected();
 					enamech = chEname.isSelected();
 					jobch = chJob.isSelected();

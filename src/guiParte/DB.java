@@ -8,7 +8,10 @@ public class DB {
 	private static String pwd = "Ramez2003";
 	private static String name = Ventana1.nombre;
 	
-	public static void res(){
+	public static String res(){
+		
+		result = "";
+		
 		try {
 			Connection con = DriverManager.getConnection(url, user, pwd);
 			Statement st = con.createStatement();
@@ -85,11 +88,10 @@ public class DB {
 				
 				result = Integer.toString(rs);
 			}
-			else {
+			else if(Opciones.caso == 4){
 				
-				ResultSet rs = st.executeQuery("Select * from " +name + ";");
 				if(Ventana1.nombre == "Emp") {
-					
+					ResultSet rs = st.executeQuery("Select * from Emp;");
 					while(rs.next()) {
 					
 						result = result + rs.getString(1) + " " + rs.getString(2) + " " + rs.getString(3) + " " + rs.getString(4) + " "
@@ -97,20 +99,20 @@ public class DB {
 					}
 				}
 					else {
-						
+						ResultSet rs = st.executeQuery("Select * from Dept;");
 						while(rs.next()) {
 							result = result + rs.getString(1) + " " + rs.getString(2) + " " + rs.getString(3) + "\n";
 						}
 					}
-					
-				
-				
+									
 			}
 			
 			con.close();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+		
+		return result;
 	}
 
 }

@@ -25,14 +25,14 @@ public class Finale {
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
-		JOptionPane.showMessageDialog(frame, DB.result, "Result", JOptionPane.INFORMATION_MESSAGE);
+		JOptionPane.showMessageDialog(frame, DB.res(), "Result", JOptionPane.INFORMATION_MESSAGE);
 		
 		JButton si = new JButton("SI");
 		si.setFont(new Font("Serif", Font.BOLD, 15));
 		si.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
-				Opciones.show();
+				Ventana1.show();
 			}
 		});
 		
