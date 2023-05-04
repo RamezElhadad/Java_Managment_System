@@ -7,6 +7,8 @@ import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.Font;
+import java.awt.Color;
+import java.awt.Window.Type;
 public class Opciones {
 
 	public static void main(String[] args) {
@@ -18,6 +20,7 @@ public class Opciones {
 	
 	public static void show() {
 		JFrame frame = new JFrame("EMPRESA PATATA_"+Ventana1.nombre);
+		frame.getContentPane().setBackground(Color.WHITE);
 		frame.setBounds(200, 200, 721, 417);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
@@ -27,6 +30,8 @@ public class Opciones {
 		alta.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {	
 				caso = 1;
+				
+				frame.setVisible(false);
 				Info.show();
 			}
 		});
@@ -39,6 +44,7 @@ public class Opciones {
 		atras.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
+				frame.setVisible(false);
 				Ventana1.show();
 			}
 		});
@@ -50,6 +56,8 @@ public class Opciones {
 		mod.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				caso = 2;
+				
+				frame.setVisible(false);
 				Info.show();
 			}
 		});
@@ -62,6 +70,8 @@ public class Opciones {
 		baja.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				caso = 3;
+				
+				frame.setVisible(false);
 				Info.show();
 			}
 		});
@@ -74,6 +84,8 @@ public class Opciones {
 		ver.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				caso = 4;
+				
+				frame.setVisible(false);
 				Finale.show();
 			}
 		});

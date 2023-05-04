@@ -2,7 +2,7 @@ package guiParte;
 import java.sql.*;
 public class DB {
 
-	static String result = "";
+	static String result;
 	private static String url = "jdbc:mysql://localhost:3306/empresa";
 	private static String user = "alumno";
 	private static String pwd = "alumno";
@@ -94,14 +94,14 @@ public class DB {
 					ResultSet rs = st.executeQuery("Select * from Emp;");
 					while(rs.next()) {
 					
-						result = result + rs.getString(1) + " " + rs.getString(2) + " " + rs.getString(3) + " " + rs.getString(4) + " "
-								+ rs.getString(5) + " " + rs.getString(6) + " " + rs.getString(7) + " " + rs.getString(8) + "\n";
+						result = result + rs.getString(1) + "  " + rs.getString(2) + "  " + rs.getString(3) + "  " + rs.getString(4) + "  "
+								+ rs.getString(5) + "  " + rs.getString(6) + "  " + rs.getString(7) + "  " + rs.getString(8) + "\n";
 					}
 				}
 					else {
 						ResultSet rs = st.executeQuery("Select * from Dept;");
 						while(rs.next()) {
-							result = result + rs.getString(1) + " " + rs.getString(2) + " " + rs.getString(3) + "\n";
+							result = result + rs.getString(1) + "  " + rs.getString(2) + "  " + rs.getString(3) + "\n";
 						}
 					}
 									

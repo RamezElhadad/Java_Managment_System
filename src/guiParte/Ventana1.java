@@ -43,6 +43,7 @@ public class Ventana1 {
 		dept.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				nombre = "Dept";
+				
 				frame.setVisible(false);
 				Opciones.show();
 				

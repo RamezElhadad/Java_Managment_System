@@ -595,6 +595,7 @@ public class Info {
 					locch = chLoc.isSelected();
 				}
 				
+				frame.setVisible(false);
 				DB.res();
 				Finale.show();
 
