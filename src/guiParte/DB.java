@@ -4,8 +4,8 @@ public class DB {
 
 	static String result = "";
 	private static String url = "jdbc:mysql://localhost:3306/empresa";
-	private static String user = "Ramez";
-	private static String pwd = "Ramez2003";
+	private static String user = "alumno";
+	private static String pwd = "alumno";
 	private static String name = Ventana1.nombre;
 	
 	public static String res(){

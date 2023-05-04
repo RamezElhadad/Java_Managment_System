@@ -45,7 +45,7 @@ public class Info {
 	public static void show() {
 		JFrame frame = new JFrame("EMPRESA PATATA_"+Ventana1.nombre);
 		frame.setBounds(200, 200, 721, 417);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);		
 		frame.getContentPane().setLayout(null);
 //-------------------------------------Caso 1- Emp-----------------------------------------------------------------------	
 		
@@ -571,6 +571,14 @@ public class Info {
 					
 				}
 				else if(Opciones.caso == 3 && Ventana1.nombre == "Emp") {
+					empno = txt2.getText();
+					ename = txt3.getText();
+					job = txt4.getText();
+					mgr = txt5.getText();
+					hiredate = txt6.getText();
+					sal = txt7.getText();
+					comm = txt8.getText();
+					deptno = txt.getText();
 					deptnoch = chDeptno.isSelected();
 					enamech = chEname.isSelected();
 					jobch = chJob.isSelected();
@@ -580,6 +588,9 @@ public class Info {
 					commch = chComm.isSelected();
 				}
 				else if(Opciones.caso == 3 && Ventana1.nombre == "Dept") {
+					deptno = txt.getText();
+					dname = txt2.getText();
+					loc = txt4.getText();
 					dnamech = chDname.isSelected();
 					locch = chLoc.isSelected();
 				}
@@ -592,6 +603,66 @@ public class Info {
 		});
 		envia.setBounds(572, 324, 123, 43);
 		frame.getContentPane().add(envia);
+		
+		JButton reset = new JButton("Borrar");
+		reset.setFont(new Font("MS Gothic", Font.BOLD | Font.ITALIC, 15));
+		reset.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				if(Ventana1.nombre == "Emp" && Opciones.caso == 1) {
+					txt2.setText("");
+					txt3.setText("");
+					txt4.setText("");
+					txt5.setText("");
+					txt6.setText("");
+					txt7.setText("");
+					txt8.setText("");
+					txt.setText("");
+				}
+				else if (Ventana1.nombre == "Dept" && Opciones.caso == 1){
+					txt.setText("");
+					txt2.setText("");
+					txt4.setText("");
+				}
+				else if(Ventana1.nombre == "Emp" && Opciones.caso ==2) {
+					txt.setText("");
+					txt2.setText("");
+				}
+				else if(Ventana1.nombre == "Dept" && Opciones.caso == 2) {
+					txt.setText("");
+					
+				}
+				else if(Opciones.caso == 3 && Ventana1.nombre == "Emp") {
+					txt2.setText("");
+					txt3.setText("");
+					txt4.setText("");
+					txt5.setText("");
+					txt6.setText("");
+					txt7.setText("");
+					txt8.setText("");
+					txt.setText("");
+					chDeptno.setSelected(false);
+					chEname.setSelected(false);
+					chJob.setSelected(false);
+					chMgr.setSelected(false);
+					chHire.setSelected(false);
+					chSal.setSelected(false);
+					chComm.setSelected(false);
+				}
+				else if(Opciones.caso == 3 && Ventana1.nombre == "Dept") {
+					txt.setText("");
+					txt2.setText("");
+					txt4.setText("");
+					chDname.setSelected(false);
+					chLoc.setSelected(false);
+				}
+				
+			}
+			
+		});
+		reset.setBounds(439, 324, 123, 43);
+		frame.getContentPane().add(reset);
 		
 		
 		
