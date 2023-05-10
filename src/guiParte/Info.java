@@ -14,6 +14,7 @@ import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import javax.swing.DropMode;
 import javax.swing.JCheckBox;
+import java.awt.SystemColor;
 
 public class Info {
 	private static JTextField txt;
@@ -39,11 +40,11 @@ public class Info {
 
 	public static void main(String[] args) {
 		show();
-		System.out.println(txt.getText());
 	}
 	
 	public static void show() {
 		JFrame frame = new JFrame("EMPRESA PATATA_"+Ventana1.nombre);
+		frame.getContentPane().setBackground(SystemColor.textHighlight);
 		frame.setBounds(200, 200, 721, 417);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);		
 		frame.getContentPane().setLayout(null);
@@ -529,6 +530,8 @@ public class Info {
 //-------------------------------------Atras - Enviar-----------------------------------------------------------------------	
 		
 		JButton atras = new JButton("Atras");
+		atras.setForeground(Color.BLUE);
+		atras.setBackground(Color.BLACK);
 		atras.setFont(new Font("MS Gothic", Font.BOLD | Font.ITALIC, 15));
 		atras.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -541,6 +544,8 @@ public class Info {
 		frame.getContentPane().add(atras);
 		
 		JButton envia = new JButton("Enviar");
+		envia.setForeground(Color.BLUE);
+		envia.setBackground(Color.BLACK);
 		envia.setFont(new Font("MS Gothic", Font.BOLD | Font.ITALIC, 15));
 		envia.addActionListener(new ActionListener() {
 
@@ -596,7 +601,6 @@ public class Info {
 				}
 				
 				frame.setVisible(false);
-				DB.res();
 				Finale.show();
 
 			}
@@ -606,6 +610,8 @@ public class Info {
 		frame.getContentPane().add(envia);
 		
 		JButton reset = new JButton("Borrar");
+		reset.setForeground(Color.BLUE);
+		reset.setBackground(Color.BLACK);
 		reset.setFont(new Font("MS Gothic", Font.BOLD | Font.ITALIC, 15));
 		reset.addActionListener(new ActionListener() {
 

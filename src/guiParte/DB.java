@@ -17,34 +17,42 @@ public class DB {
 			Statement st = con.createStatement();
 			
 			
-			if(Opciones.caso == 1) {
-				int rs;
+			if(Opciones.caso == 1 && Ventana1.nombre == "Emp") {
 				
-				if(Ventana1.nombre == "Emp") {
-					rs = st.executeUpdate("Insert into " +name + " values( " + "\"" + Info.empno + "\"" +" ,"+ "\"" + Info.ename + "\"" +", "+ "\"" + Info.job + "\"" + " ,"+
+				int rs = st.executeUpdate("Insert into " +name + " values( " + "\"" + Info.empno + "\"" +" ,"+ "\"" + Info.ename + "\"" +", "+ "\"" + Info.job + "\"" + " ,"+
 							"\"" + Info.mgr +"\"" + " ,"+ "\"" + Info.hiredate +"\"" +" ,"+ "\"" + Info.sal +"\"" +" ,"+ "\"" + Info.comm +"\"" +" ,"+ "\"" + Info.deptno +"\"" + ");");
-				}
-				else {
-					rs = st.executeUpdate("Insert into " +name + " values( " + "\"" + Info.deptno +"\"" + " ,"+ "\"" + Info.dname +"\"" +" ,"+ "\"" + Info.loc +"\"" + ");");
-				}
-				result = Integer.toString(rs);
-			}
-			else if(Opciones.caso == 2) {
-				int rs;
 				
-				if(Ventana1.nombre == "Emp") {
-					rs = st.executeUpdate("Delete from " +name + " where empno = " +"\"" + Info.empno +"\"" + ";");
-				}
-				else {
-					rs = st.executeUpdate("Delete from " +name + " where deptno = " +"\"" + Info.deptno +"\"" + ";");
-				}
 				result = Integer.toString(rs);
 			}
-			else if(Opciones.caso == 3) {
+			
+			
+			else if(Opciones.caso == 1 && Ventana1.nombre == "Dept") {
+				 
+				int rs = st.executeUpdate("Insert into " +name + " values( " + "\"" + Info.deptno +"\"" + " ,"+ "\"" + Info.dname +"\"" +" ,"+ "\"" + Info.loc +"\"" + ");");
+				
+				result = Integer.toString(rs);
+			}
+			
+			
+			else if(Opciones.caso == 2 && Ventana1.nombre == "Emp") {
+								
+				int rs = st.executeUpdate("Delete from " +name + " where empno = " +"\"" + Info.empno +"\"" + ";");
+				
+				result = Integer.toString(rs);
+			}
+			
+			
+			else if(Opciones.caso == 2 && Ventana1.nombre == "Dept"){
+				
+				int rs = st.executeUpdate("Delete from " +name + " where deptno = " +"\"" + Info.deptno +"\"" + ";");
+				
+				result = Integer.toString(rs);
+			}
+			
+			
+			else if(Opciones.caso == 3 && Ventana1.nombre == "Emp") {
 				int rs = 0;
-				
-				if(Ventana1.nombre == "Emp") {
-										
+													
 					if(Info.deptnoch == true ) {
 						rs = st.executeUpdate("Update " +name + " set deptno = " +"\"" + Info.deptno +"\"" + " where empno = " + "\"" +Info.empno + "\"" +";");
 					}
@@ -72,22 +80,26 @@ public class DB {
 					if(Info.commch == true) {
 						rs = st.executeUpdate("Update " +name + " set comm = " +"\"" + Info.comm +"\"" + " where empno = " +"\"" + Info.empno +"\"" + ";");
 					}
-					
-				}
-				else {
-
-					if(Info.dnamech == true) {
-						rs = st.executeUpdate("Update " +name + " set dname = " +"\"" + Info.dname +"\"" + " where deptno = " +"\"" + Info.deptno +"\"" + ";");
-					}
-					
-					if(Info.locch == true) {
-						rs = st.executeUpdate("Update " +name + " set loc = " +"\"" + Info.loc +"\"" + " where deptno = " +"\"" + Info.deptno +"\"" + ";");
-					}
-					
-				}
 				
 				result = Integer.toString(rs);
 			}
+			
+			
+			else if(Opciones.caso == 3 && Ventana1.nombre == "Dept") {
+				int rs = 0;
+				
+				if(Info.dnamech == true) {
+					rs = st.executeUpdate("Update " +name + " set dname = " +"\"" + Info.dname +"\"" + " where deptno = " +"\"" + Info.deptno +"\"" + ";");
+				}
+				
+				if(Info.locch == true) {
+					rs = st.executeUpdate("Update " +name + " set loc = " +"\"" + Info.loc +"\"" + " where deptno = " +"\"" + Info.deptno +"\"" + ";");
+				}
+				result = Integer.toString(rs);
+				
+			}
+			
+		
 			else if(Opciones.caso == 4){
 				
 				if(Ventana1.nombre == "Emp") {

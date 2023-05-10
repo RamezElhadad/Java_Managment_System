@@ -4,6 +4,7 @@ import java.awt.*;
 import javax.swing.*;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.awt.Window.Type;
 public class Ventana1 {
 
 	/**
@@ -18,11 +19,16 @@ public class Ventana1 {
 	
 	public static void show() {
 		JFrame frame = new JFrame("EMPRESA PATATA_Inicio");
+		frame.setFont(new Font("Algerian", Font.ITALIC, 14));
+		frame.setBackground(new Color(255, 255, 0));
+		frame.getContentPane().setBackground(SystemColor.textHighlight);
 		frame.setBounds(200, 200, 721, 417);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
 		JButton emp = new JButton("Gestionar Emp");
+		emp.setForeground(Color.WHITE);
+		emp.setBackground(Color.BLACK);
 		emp.setSize(196, 100);
 		emp.setLocation(40, 68);
 		emp.addActionListener(new ActionListener() {
@@ -37,6 +43,8 @@ public class Ventana1 {
 		frame.getContentPane().add(emp);
 		
 		JButton dept = new JButton("Gestionar Dept");
+		dept.setForeground(Color.WHITE);
+		dept.setBackground(Color.BLACK);
 		dept.setSize(196, 100);
 		dept.setLocation(411, 68);
 		frame.getContentPane().add(dept);
@@ -51,6 +59,8 @@ public class Ventana1 {
 		});
 		
 		JButton salir = new JButton("Salir");
+		salir.setForeground(Color.WHITE);
+		salir.setBackground(Color.BLACK);
 		salir.setLocation(233, 218);
 		salir.setSize(196, 100);
 		salir.addActionListener(new ActionListener() {

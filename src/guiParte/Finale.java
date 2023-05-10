@@ -10,6 +10,7 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.SwingConstants;
 import java.awt.Color;
+import java.awt.SystemColor;
 
 public class Finale {
 
@@ -21,6 +22,8 @@ public class Finale {
 	
 	public static void show() {
 		JFrame frame = new JFrame("EMPRESA PATATA_"+Ventana1.nombre);
+		frame.setBackground(new Color(0, 0, 0));
+		frame.getContentPane().setBackground(SystemColor.textHighlight);
 		frame.setBounds(200, 200, 721, 417);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
@@ -28,10 +31,13 @@ public class Finale {
 		JOptionPane.showMessageDialog(frame, DB.res(), "Result", JOptionPane.INFORMATION_MESSAGE);
 		
 		JButton si = new JButton("SI");
+		si.setForeground(Color.WHITE);
+		si.setBackground(new Color(0, 0, 0));
 		si.setFont(new Font("Serif", Font.BOLD, 15));
 		si.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
+				frame.setVisible(false);
 				Ventana1.show();
 			}
 		});
@@ -48,6 +54,8 @@ public class Finale {
 		frame.getContentPane().add(txt);
 		
 		JButton no = new JButton("NO");
+		no.setForeground(Color.WHITE);
+		no.setBackground(new Color(0, 0, 0));
 		no.setFont(new Font("Serif", Font.BOLD, 15));
 		no.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
