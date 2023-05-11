@@ -28,7 +28,17 @@ public class Finale {
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
-		JOptionPane.showMessageDialog(frame, DB.res(), "Result", JOptionPane.INFORMATION_MESSAGE);
+		if(DB.res() == "0" || DB.getResult() == null || DB.getResult() == "") {
+			JOptionPane.showMessageDialog(frame, "Un Error se pasó", "Resulta", JOptionPane.ERROR_MESSAGE);
+		}
+		else {
+			if(Opciones.caso != 4) {
+				JOptionPane.showMessageDialog(frame, "El proceso pasó bien", "Resulta", JOptionPane.INFORMATION_MESSAGE);
+			}
+			else {
+				JOptionPane.showMessageDialog(frame, DB.getResult(), "Resulta", JOptionPane.INFORMATION_MESSAGE);
+			}
+		}
 		
 		JButton si = new JButton("SI");
 		si.setForeground(Color.WHITE);

@@ -2,7 +2,7 @@ package guiParte;
 import java.sql.*;
 public class DB {
 
-	static String result;
+	private static String result = "";
 	private static String url = "jdbc:mysql://localhost:3306/empresa";
 	private static String user = "alumno";
 	private static String pwd = "alumno";
@@ -10,12 +10,15 @@ public class DB {
 	
 	public static String res(){
 		
-		result = "";
-		
 		try {
 			Connection con = DriverManager.getConnection(url, user, pwd);
 			Statement st = con.createStatement();
-			
+			DatabaseMetaData mtd = con.getMetaData();
+
+//--------------------------------------VER CONEXION--------------------------------------------------
+
+	
+//--------------------------------------DAR ALTA--------------------------------------------------
 			
 			if(Opciones.caso == 1 && Ventana1.nombre == "Emp") {
 				
@@ -33,6 +36,7 @@ public class DB {
 				result = Integer.toString(rs);
 			}
 			
+//--------------------------------------DAR BAJA--------------------------------------------------
 			
 			else if(Opciones.caso == 2 && Ventana1.nombre == "Emp") {
 								
@@ -49,6 +53,7 @@ public class DB {
 				result = Integer.toString(rs);
 			}
 			
+//--------------------------------------MODIFICAR--------------------------------------------------
 			
 			else if(Opciones.caso == 3 && Ventana1.nombre == "Emp") {
 				int rs = 0;
@@ -99,7 +104,8 @@ public class DB {
 				
 			}
 			
-		
+//--------------------------------------VER LISTA--------------------------------------------------
+			
 			else if(Opciones.caso == 4){
 				
 				if(Ventana1.nombre == "Emp") {
@@ -119,11 +125,16 @@ public class DB {
 									
 			}
 			
+			
 			con.close();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		
+		return result;
+	}
+	
+	public static String getResult() {
 		return result;
 	}
 
